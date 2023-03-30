@@ -32,12 +32,11 @@ jobs:
     - name: Copy file from private to public repository
       run: pwd && ls && mv ../relativita_ristretta.pdf ./
 
-    - name: Push changes to public repository
-      uses: stefanzweifel/git-auto-commit-action@v4.9.2
-      with:
-        commit_message: "Update file from private repository"
-        commit_user_email: "noreply@github.com"
-        commit_user_name: "GitHub Action"
-        branch: main
-        repository: danielediprima/lezioni_relativita_ristretta
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Update Repository
+      run: |-
+        git config user.name "autoupdate"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date --iso-8601=seconds)
+        git commit -m "update: ${timestamp}" || exit 0
+        git push
