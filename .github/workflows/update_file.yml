@@ -19,6 +19,10 @@ jobs:
         ref: main
         token: ${{ secrets.PRIVATE_REPO_TOKEN }}
 
+
+    - name: list
+      run: ls
+
     - name: Checkout public repository
       uses: actions/checkout@v2
       with:
@@ -26,7 +30,8 @@ jobs:
         ref: main
 
     - name: Copy file from private to public repository
-      run: cp ../relativita_ristretta/relativita_ristretta.pdf ./document.pdf
+      run: ls 
+#      cp ../relativita_ristretta/relativita_ristretta.pdf ./document.pdf
 
     - name: Push changes to public repository
       uses: stefanzweifel/git-auto-commit-action@v4.9.2
