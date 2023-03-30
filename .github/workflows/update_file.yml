@@ -26,7 +26,7 @@ jobs:
         ref: main
 
     - name: Copy file from private to public repository
-      run: cp relativita_ristretta/relativita_ristretta.pdf lezioni_relativita_ristretta/relativita_ristretta.pdf
+      run: cp relativita_ristretta.pdf .
 
     - name: Push changes to public repository
       uses: stefanzweifel/git-auto-commit-action@v4.9.2
