@@ -21,7 +21,7 @@ jobs:
 
 
     - name: list
-      run: ls
+      run: pwd && ls
 
     - name: Checkout public repository
       uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
         ref: main
 
     - name: Copy file from private to public repository
-      run: ls 
+      run: pwd && ls 
 #      cp ../relativita_ristretta/relativita_ristretta.pdf ./document.pdf
 
     - name: Push changes to public repository
