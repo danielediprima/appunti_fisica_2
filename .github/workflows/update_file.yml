@@ -25,9 +25,9 @@ jobs:
 
     - name: Checkout public repository
       uses: actions/checkout@v2
-      with:
-        repository: danielediprima/lezioni_relativita_ristretta
-        ref: main
+      #with:
+      #  #repository: danielediprima/lezioni_relativita_ristretta
+      #  ref: main
 
     - name: Copy file from private to public repository
       run: pwd && ls && mv ../relativita_ristretta.pdf ./
