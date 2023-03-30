@@ -1,7 +1,7 @@
 name: aggiornamento giornaliero commenti change
 
 on:
-  repository_dispatch:
+  workflow_dispatch:
 
 jobs:
   scheduled:
