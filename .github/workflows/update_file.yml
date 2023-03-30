@@ -1,0 +1,39 @@
+name: Aggiorna file
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [sample_push]
+  workflow_dispatch:
+
+jobs:
+  copy_file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout private repository
+      uses: actions/checkout@v2
+      with:
+        repository: danielediprima/relativita_ristretta
+        ref: main
+        token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+
+    - name: Checkout public repository
+      uses: actions/checkout@v2
+      with:
+        repository: danielediprima/lezioni_relativita_ristretta
+        ref: main
+
+    - name: Copy file from private to public repository
+      run: cp relativita_ristretta/main/relativita_ristretta.pdf lezioni_relativita_ristretta/main/relativita_ristretta.pdf
+
+    - name: Push changes to public repository
+      uses: stefanzweifel/git-auto-commit-action@v4.9.2
+      with:
+        commit_message: "Update file from private repository"
+        commit_user_email: "noreply@github.com"
+        commit_user_name: "GitHub Action"
+        branch: main
+        repository: danielediprima/lezioni_relativita_ristretta
+        token: ${{ secrets.GITHUB_TOKEN }}
