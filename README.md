@@ -5,7 +5,7 @@ Appunti delle lezioni di relatività ristretta tenute dal prof. Lombardo durante
 root
 ├── 📂 .githhub
 │   └── 📂 workflows
-│       └── 📄 dispatch.yml
+│       └── 📄 update_file.yml
 ├── 📄 README.md
 └── 📄 relativita_ristretta.pdf
 ```
