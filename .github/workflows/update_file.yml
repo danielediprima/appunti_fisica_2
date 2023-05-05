@@ -17,7 +17,7 @@ jobs:
       with:
         repository: danielediprima/fisica_2
         ref: main
-        token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
 
     - name: list
