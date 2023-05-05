@@ -22,6 +22,9 @@ jobs:
 
     - name: list
       run: pwd && ls && cp ./relativita_ristretta/relativita_ristretta.pdf ../
+      
+    - name: list
+      run: pwd && ls && cp ./magnetismo_materia/magnetismo.pdf ../
 
     - name: Checkout public repository
       uses: actions/checkout@v2
@@ -31,6 +34,9 @@ jobs:
 
     - name: Copy file from private to public repository
       run: pwd && ls && mv ../relativita_ristretta.pdf ./
+      
+    - name: Copy file from private to public repository
+      run: pwd && ls && mv ../magnetismo.pdf ./
 
     - name: Update Repository
       run: |-
