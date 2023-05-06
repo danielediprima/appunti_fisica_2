@@ -4,5 +4,6 @@ Appunti delle lezioni di relatività ristretta tenute dal prof. Lombardo durante
 ```
 root
 ├── 📄 README.md
+├── 📄 magnetismo.pdf
 └── 📄 relativita_ristretta.pdf
 ```
